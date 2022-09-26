@@ -1,0 +1,20 @@
+<div *ngIf="isMember; else prompt" class="chat-box">
+  <div class="header">{{channel.name}}</div><hr>
+  <div class="message-list">
+    <div *ngFor="let message of messages">
+      <app-message [message] = "message" [user] = "userName"></app-message>
+    </div>
+  </div>
+
+  <div class="input-group">
+    <input type="text" [(ngModel)] = "newMessage">
+    <button (click)="sendMessage()" >Send</button>
+  </div>
+</div>
+
+<ng-template #prompt>
+  <div class="join">
+    <h2>Join channel</h2>
+    <button (click) = "joinChannel()">Join</button>
+  </div>
+</ng-template>

@@ -1,0 +1,10 @@
+.input-group{
+  width: 100%;
+}
+.message-list{
+  height: 268px;
+  overflow-y: scroll;
+}
+hr{
+  border: 1px dashed black;
+}

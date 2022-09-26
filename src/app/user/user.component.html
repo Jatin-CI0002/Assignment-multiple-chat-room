@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="user">
+    <h2>{{user.name}}</h2>
+  </div>
+<div class="user-container">
+  <div class="user-content">
+    <div class="channels">
+      <div *ngFor="let channel of channels">
+        <p (click)="selectChannel(channel)" >{{'#' + channel.name}}</p>
+      </div>
+    </div>
+    <div class="channel-container">
+      <div class="create-channel">
+        <input type="text" [(ngModel)] = 'newChannel' placeholder="channel name">
+        <button (click)="joinChannel()">Create</button>
+      </div>
+    </div>
+  </div>
+  <div class="chat-container">
+    <app-chat [user] = "user" [userName] = "user.name" [channel] = "currentChannel" ></app-chat>
+  </div>
+</div>
+</div>
